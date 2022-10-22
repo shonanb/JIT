@@ -1,0 +1,23 @@
+<% provide(:title, 'All Articles') %>
+<h1>記事一覧</h1>
+
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-condensed table-hover" id="table-articles">
+  <%= link_to "記事新規作成", new_users_article_path, class: "btn btn-lg btn-primary " %>
+    <thead>
+      <tr>
+        <th>詳細表示</th>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>画像</th>
+        <th>編集・削除</th>
+      </tr>
+    </thead>
+
+    <% @articles.each do |article| %>
+      <tr>
+        <td></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
