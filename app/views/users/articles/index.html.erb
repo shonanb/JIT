@@ -1,8 +1,8 @@
 <% provide(:title, 'articles') %>
-<h1>記事一覧</h1>
+<h1 class="text-center">記事一覧</h1>
 
-<div class="col-md-10 col-md-offset-1">
-  <table class="table table-condensed table-hover" id="table-articles">
+<div class="col-md-12 col-md-offset-1 text-center">
+  <table class="table table-condensed table-hover">
   <%= link_to "記事新規作成", new_users_article_path, class: "btn btn-lg btn-primary " %>
     <thead>
       <tr>
@@ -21,7 +21,7 @@
         <td><%= article.content %></td>
         <td>
           <% if article.img? %>
-          <%= image_tag article.img.url, :size => '100x100' %>
+          <%= image_tag article.img.url, :size => '200x200' %>
           <% end %>
         </td>
         <td>

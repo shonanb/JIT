@@ -6,6 +6,9 @@ class Users::ArticlesController < ApplicationController
     @articles = current_user.articles
   end
 
+  def show
+  end
+
   def new
     @article = current_user.articles.new
   end
