@@ -16,10 +16,10 @@ class Users::ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
     if @article.save
-      flash[:success] = '新規作成に成功しました。'
+      flash[:notice] = '新規作成に成功しました。'
       redirect_to users_articles_url
     else
-      flash[:danger] = '新規作成に失敗しました。'
+      flash[:alert] = '新規作成に失敗しました。'
       render :new
     end
   end
@@ -29,7 +29,7 @@ class Users::ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:success] = "投稿を編集しました。"
+      flash[:notice] = "投稿を編集しました。"
       redirect_to users_articles_url
     else
       render :edit
@@ -38,7 +38,7 @@ class Users::ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:success] = "投稿を削除しました。"
+    flash[:alert] = "投稿を削除しました。"
     redirect_to users_articles_url
   end
 
