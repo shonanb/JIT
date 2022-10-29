@@ -1,0 +1,33 @@
+<% provide(:title, 'articles') %>
+<h1 class="text-center">記事詳細</h1>
+
+<div class="col-md-12 col-md-offset-1 text-center">
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>画像</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td><%= @article.title %></td>
+          <td><%= @article.content %></td>
+          <td>
+            <% if @article.img? %>
+            <%= image_tag @article.img.url, :size => '100x100' %>
+            <% end %>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+        <td>
+          <%= link_to "編集", edit_users_article_path(@article), class: "btn btn-success" %>
+          <%= link_to "削除",  users_article_path(@article), method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %><br><br>
+          <%= link_to "記事一覧へ戻る", users_articles_path, class: "btn btn-lg btn-primary" %>
+        </td>
+      </tr>
+</div>
