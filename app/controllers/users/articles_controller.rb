@@ -17,7 +17,7 @@ class Users::ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     if @article.save
       flash[:notice] = '新規作成に成功しました。'
-      redirect_to users_articles_url
+      redirect_to users_article_path @article
     else
       flash[:alert] = '新規作成に失敗しました。'
       render :new
@@ -30,7 +30,7 @@ class Users::ArticlesController < ApplicationController
   def update
     if @article.update(article_params)
       flash[:notice] = "投稿を編集しました。"
-      redirect_to users_articles_url
+      redirect_to users_article_path @article
     else
       render :edit
     end
